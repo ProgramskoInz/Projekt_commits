@@ -190,7 +190,9 @@ public class Guii extends JFrame {
 		btnObradi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					ThresholdRad.manipuliraj(ucitavanje);
+					 if(testvalja==1 && treningvalja==1) {
+						 ThresholdRad.manipuliraj(ucitavanje);
+					 }
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -199,6 +201,15 @@ public class Guii extends JFrame {
 		});
 		btnObradi.setBounds(16, 148, 89, 23);
 		contentPane.add(btnObradi);
+		
+		JButton btnOcistiProzor = new JButton("Ocisti prozor");
+		btnOcistiProzor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText("");
+			}
+		});
+		btnOcistiProzor.setBounds(270, 34, 89, 23);
+		contentPane.add(btnOcistiProzor);
 		btnCsvarff.addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
 				  fc = new JFileChooser();
