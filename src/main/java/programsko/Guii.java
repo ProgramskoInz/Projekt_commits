@@ -48,7 +48,7 @@ public class Guii extends JFrame {
 	public static int brojactoc = 0, brojactresh = 8;
 	private JButton btnObradi = new JButton("Obradi");
 	/**
-	 * Launch the application.
+	 * Launch the application.t
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -76,10 +76,10 @@ public class Guii extends JFrame {
 		btnObradi.setEnabled(false);
 
 		textArea = new TextArea();
-		textArea.setBounds(16, 34, 247, 73);
+		textArea.setBounds(16, 34, 293, 115);
 		
 		JButton btnUcitaj = new JButton("Ucitaj");
-		btnUcitaj.setBounds(260, 5, 89, 23);
+		btnUcitaj.setBounds(291, 5, 89, 23);
 		contentPane.add(btnUcitaj);
 		btnUcitaj.setEnabled(false); // ovo stavi da je zatamnjeno dok se ne ucita i trening i test podaci
 		
@@ -186,7 +186,7 @@ public class Guii extends JFrame {
 		contentPane.add(btnUcitajTest);
 		
 		JButton btnCsvarff = new JButton("CSV-ARFF");//pretvorba csv u arff format
-		btnCsvarff.setBounds(16, 113, 113, 23);
+		btnCsvarff.setBounds(16, 161, 113, 23);
 		contentPane.add(btnCsvarff);
 		
 		JButton btntocnosti = new JButton("Prikazi graf tocnosti");
@@ -203,7 +203,7 @@ public class Guii extends JFrame {
 			}
 		});
 		btntocnosti.setEnabled(false);
-		btntocnosti.setBounds(150, 113, 113, 23);
+		btntocnosti.setBounds(138, 161, 113, 23);
 		contentPane.add(btntocnosti);
 		
 		
@@ -221,7 +221,7 @@ public class Guii extends JFrame {
 				}
 			}
 		});
-		btnObradi.setBounds(16, 148, 89, 23);
+		btnObradi.setBounds(16, 195, 89, 23);
 		contentPane.add(btnObradi);
 		
 		JButton btnOcistiProzor = new JButton("Ocisti prozor");
@@ -230,7 +230,7 @@ public class Guii extends JFrame {
 				textArea.setText("");
 			}
 		});
-		btnOcistiProzor.setBounds(270, 34, 89, 23);
+		btnOcistiProzor.setBounds(315, 39, 89, 23);
 		contentPane.add(btnOcistiProzor);
 		btnCsvarff.addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
@@ -283,6 +283,6 @@ public class Guii extends JFrame {
 		frame.setSize(450,350);
 	}
 	public static void Pisi(String tekst) {
-		textArea.setText(tekst); // sluzi za pisanje po textboxu iz drugih klasa
+		textArea.appendText(tekst); // sluzi za pisanje po textboxu iz drugih klasa
 	}
 }

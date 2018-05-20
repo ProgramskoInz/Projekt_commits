@@ -46,8 +46,8 @@ public class Regresija {
 				testDataset = test;	 // uzima od objekta test podatke ucitane
 			
 				//loop through the new dataset and make predictions
-				System.out.println("===================");
-				System.out.println("Actual Class, SMO Predicted");
+				Izvjestaj.Pisi("===================");
+				Izvjestaj.Pisi("Actual Class, SMO Predicted");
 				for (int i = 0; i < testDataset.numInstances(); i++) {
 					//get class double value for current instance
 					actualValue = testDataset.instance(i).value(testDataset.numAttributes()-1); //vrijednost instance u class indeksu
@@ -57,7 +57,8 @@ public class Regresija {
 					//call classifyInstance, which returns a double value for the class
 					predSMO = fc.classifyInstance(newInst);
 				//	testDataset.instance(i).setClassValue(predSMO);
-					System.out.println(actualValue+", "+predSMO);
+					//System.out.println(actualValue+", "+predSMO);
+					Izvjestaj.Pisi(String.valueOf(actualValue)+" "+String.valueOf(predSMO)+"\n");
 				}	
 				
 				
@@ -77,13 +78,17 @@ public class Regresija {
 				//now evaluate model
 				eval.evaluateModel(fc, testDataset);
 			//	eval.crossValidateModel(fc, testDataset, folds, rand);
-				System.out.println(eval.toSummaryString("Evaluation results:\n", false));
-				
-				System.out.println("Correct % = "+eval.pctCorrect());
-				System.out.println("Incorrect % = "+eval.pctIncorrect());
+				//System.out.println(eval.toSummaryString("Evaluation results:\n", false));
+				Izvjestaj.Pisi(eval.toSummaryString("Rezultati\n",false));
+				Izvjestaj.Pisi(String.valueOf(eval.pctCorrect()));
+				Izvjestaj.Pisi(String.valueOf(eval.pctIncorrect()));
+				//System.out.println("Correct % = "+eval.pctCorrect());
+				//System.out.println("Incorrect % = "+eval.pctIncorrect());
 				
 				Guii.poljetocnosti[Guii.brojactoc++] = eval.pctCorrect();
-			    //the confusion matrix
-				System.out.println(eval.toMatrixString("=== Overall Confusion Matrix ===\n"));
+				
+				//the confusion matrix
+				//System.out.println(eval.toMatrixString("=== Overall Confusion Matrix ===\n"));
+				Izvjestaj.Pisi(eval.toMatrixString("Confusion Matrix\n"));
 	}
 }

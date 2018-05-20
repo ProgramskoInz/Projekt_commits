@@ -13,8 +13,10 @@ public class ThresholdRad {
 	private static int i,j;
 	private static double vrijednost;
 	private static FastVector lista = new FastVector();
+	private static Izvjestaj prozor =new Izvjestaj();
 	public static void manipuliraj(UcitajPodatke podaci) throws Exception {
 		trainDataset = podaci.train;
+		prozor.setVisible(true);
 		lista.addElement("0");
 		lista.addElement("1");
 		weka.core.Attribute atribut = new  weka.core.Attribute("Classindeks",lista);
@@ -44,12 +46,12 @@ public class ThresholdRad {
 				}else {
 					noviDataset.instance(i).setValue(noviDataset.classAttribute(), 0);
 				}
-				System.out.println(noviDataset.instance(i).classValue()+" Broj gresaka : "+vrijednost +" |clas vrijednost: "+klas);
+				Izvjestaj.Pisi(noviDataset.instance(i).classValue()+" Broj gresaka : "+vrijednost +" |clas vrijednost: "+klas +"\n");
 				
 				
 			}
 			Regresija.regresija(noviDataset,testDataset);
-			System.out.println("Gotov " + j +" krug");
+			Izvjestaj.Pisi("Gotov " + j +" krug");
 		}
 	}
 		
