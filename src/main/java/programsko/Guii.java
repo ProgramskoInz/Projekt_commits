@@ -6,6 +6,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
@@ -18,9 +26,15 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.TextArea;
 import java.awt.Canvas;
+import java.awt.Color;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JLabel;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+
+import weka.core.FastVector;
 
 public class Guii extends JFrame {
 	private int testvalja=0,treningvalja=0,returnVal;
@@ -30,6 +44,9 @@ public class Guii extends JFrame {
 	private JFileChooser fc;
 	private static TextArea textArea;
 	private UcitajPodatke ucitavanje;
+	public static Double[] poljetocnosti = new Double[10];
+	public static int brojactoc = 0, brojactresh = 8;
+	private JButton btnObradi = new JButton("Obradi");
 	/**
 	 * Launch the application.
 	 */
@@ -56,7 +73,8 @@ public class Guii extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		
+		btnObradi.setEnabled(false);
+
 		textArea = new TextArea();
 		textArea.setBounds(16, 34, 247, 73);
 		
@@ -71,7 +89,8 @@ public class Guii extends JFrame {
 					ucitavanje = new UcitajPodatke(pathtrening,pathtest); // poziva objekt i ucitava podatke
 					textArea.setText("Podaci spremni"); //ispis da su podaci spremni
 					btnUcitaj.setEnabled(false); // kad su podaci spremljeni ne moze se nista pozivati dok se novi odaberu
-				} catch (Exception e1) {
+					btnObradi.setEnabled(true);
+				 } catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -170,28 +189,31 @@ public class Guii extends JFrame {
 		btnCsvarff.setBounds(16, 113, 113, 23);
 		contentPane.add(btnCsvarff);
 		
-		JButton btnRegresija = new JButton("Regresija");
-		btnRegresija.addActionListener(new ActionListener() {
+		JButton btntocnosti = new JButton("Prikazi graf tocnosti");
+		btntocnosti.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if(btnUcitaj.isEnabled()) { // ako je moguce ucitanje, tj ako valjaju oba skupa podataka
-					//	Regresija.regresija(ucitavanje); //slanje objekta konstruktoru od regresije
-					}
+					
+						 Graph();
+					
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		btnRegresija.setBounds(150, 113, 113, 23);
-		contentPane.add(btnRegresija);
+		btntocnosti.setEnabled(false);
+		btntocnosti.setBounds(150, 113, 113, 23);
+		contentPane.add(btntocnosti);
 		
-		JButton btnObradi = new JButton("Obradi");
+		
 		btnObradi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					 if(testvalja==1 && treningvalja==1) {
 						 ThresholdRad.manipuliraj(ucitavanje);
+						 btntocnosti.setEnabled(true);
+						
 					 }
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -243,6 +265,22 @@ public class Guii extends JFrame {
 				} );
 		
 		
+	}
+	public static void Graph() {
+		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+		for(int it = 0; it < brojactresh; it++) {
+			dataset.setValue(new Double(poljetocnosti[it]), "Values", String.valueOf(it));
+		}
+		
+		
+		
+		JFreeChart chart = ChartFactory.createLineChart("Toènost", "Broj treshold granice", "Postotak toènosti", dataset,PlotOrientation.VERTICAL, false, true, false);
+		
+		CategoryPlot p = chart.getCategoryPlot();
+		p.setRangeGridlinePaint(Color.BLUE);
+		ChartFrame frame = new ChartFrame("Graf tocnosti",chart);
+		frame.setVisible(true);
+		frame.setSize(450,350);
 	}
 	public static void Pisi(String tekst) {
 		textArea.setText(tekst); // sluzi za pisanje po textboxu iz drugih klasa

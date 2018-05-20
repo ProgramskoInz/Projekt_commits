@@ -33,7 +33,7 @@ public class ThresholdRad {
 			}
 			
 		}
-		for(j = 0; j < 4; j=j+1) {
+		for(j = 0; j < Guii.brojactresh; j++) {
 			noviDataset = podaci.train;
 			noviDataset.setClassIndex(noviDataset.numAttributes()-1);
 			for(i = 0; i < trainDataset.numInstances(); i++){

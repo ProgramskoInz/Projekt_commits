@@ -38,7 +38,8 @@ public class CSVBiranje extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 		JLabel label = new JLabel("");
 		
 		JLabel lblNewLabel = new JLabel("Unesi ime novog arff fajla");
@@ -64,15 +65,17 @@ public class CSVBiranje extends JFrame {
 				    if(nevalja == 0) {
 				    	try {
 				    	//	System.out.println("pretvordba");
-							UcitajPodatke.pretvorba(putcsv,pathdir,textField.getText()); // salje ime fajla, ime direktorija, i ime novog fajla
-						} catch (Exception e1) {
+							
+				    		UcitajPodatke.pretvorba(putcsv,pathdir,textField.getText()); // salje ime fajla, ime direktorija, i ime novog fajla
+				    		setVisible(false);
+				    	} catch (Exception e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 				    }else{
 				    Guii.Pisi("Ime zauzeto");	//pisanje po textboxu drugog jframea
 				    }
-				    //System.exit(0);
+				   
 				    
 			}
 		});

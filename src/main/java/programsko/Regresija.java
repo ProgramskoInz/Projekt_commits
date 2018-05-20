@@ -81,7 +81,8 @@ public class Regresija {
 				
 				System.out.println("Correct % = "+eval.pctCorrect());
 				System.out.println("Incorrect % = "+eval.pctIncorrect());
-			
+				
+				Guii.poljetocnosti[Guii.brojactoc++] = eval.pctCorrect();
 			    //the confusion matrix
 				System.out.println(eval.toMatrixString("=== Overall Confusion Matrix ===\n"));
 	}
