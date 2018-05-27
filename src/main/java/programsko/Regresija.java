@@ -85,10 +85,10 @@ public class Regresija {
 				//System.out.println("Correct % = "+eval.pctCorrect());
 				//System.out.println("Incorrect % = "+eval.pctIncorrect());
 				
-				Guii.poljetocnosti[Guii.brojactoc++] = eval.pctCorrect();
-				
+				Guii.poljetocnosti[Guii.brojactoc] = eval.pctCorrect();
+				Guii.geomtocnosto[Guii.brojactoc++] = Math.sqrt(eval.truePositiveRate(0)*eval.trueNegativeRate(0));
 				//the confusion matrix
-				//System.out.println(eval.toMatrixString("=== Overall Confusion Matrix ===\n"));
+				System.out.println( Math.sqrt(eval.truePositiveRate(0)*eval.falsePositiveRate(0)));
 				Izvjestaj.Pisi(eval.toMatrixString("Confusion Matrix\n"));
 	}
 }

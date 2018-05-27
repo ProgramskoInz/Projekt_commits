@@ -45,6 +45,7 @@ public class Guii extends JFrame {
 	private static TextArea textArea;
 	private UcitajPodatke ucitavanje;
 	public static Double[] poljetocnosti = new Double[10];
+	public static Double[] geomtocnosto = new Double[10];
 	public static int brojactoc = 0, brojactresh = 8;
 	private JButton btnObradi = new JButton("Obradi");
 	/**
@@ -268,19 +269,27 @@ public class Guii extends JFrame {
 	}
 	public static void Graph() {
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+		DefaultCategoryDataset dataset1 = new DefaultCategoryDataset();
 		for(int it = 0; it < brojactresh; it++) {
 			dataset.setValue(new Double(poljetocnosti[it]), "Values", String.valueOf(it));
+			dataset1.setValue(new Double(geomtocnosto[it]), "Values", String.valueOf(it));
 		}
 		
 		
 		
 		JFreeChart chart = ChartFactory.createLineChart("Toènost", "Broj treshold granice", "Postotak toènosti", dataset,PlotOrientation.VERTICAL, false, true, false);
-		
+		JFreeChart chart1 = ChartFactory.createLineChart("Geometrijska tocnost", "", "Postotak toènosti", dataset1,PlotOrientation.VERTICAL, false, true, false);
 		CategoryPlot p = chart.getCategoryPlot();
 		p.setRangeGridlinePaint(Color.BLUE);
 		ChartFrame frame = new ChartFrame("Graf tocnosti",chart);
 		frame.setVisible(true);
 		frame.setSize(450,350);
+		
+		CategoryPlot p1 = chart1.getCategoryPlot();
+		p1.setRangeGridlinePaint(Color.BLUE);
+		ChartFrame frame1 = new ChartFrame("Graf tocnosti",chart1);
+		frame1.setVisible(true);
+		frame1.setSize(450,350);
 	}
 	public static void Pisi(String tekst) {
 		textArea.appendText(tekst); // sluzi za pisanje po textboxu iz drugih klasa
