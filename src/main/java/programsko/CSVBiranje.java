@@ -39,6 +39,7 @@ public class CSVBiranje extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setResizable(false);
 
 		JLabel label = new JLabel("");
 		

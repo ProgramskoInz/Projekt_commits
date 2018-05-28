@@ -24,6 +24,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.awt.TextArea;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -48,6 +50,7 @@ public class Guii extends JFrame {
 	public static Double[] geomtocnosto = new Double[10];
 	public static int brojactoc = 0, brojactresh = 8;
 	private JButton btnObradi = new JButton("Obradi");
+	JButton btnReset = new JButton("Reset");
 	/**
 	 * Launch the application.t
 	 */
@@ -73,7 +76,7 @@ public class Guii extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+		setResizable(false);
 		btnObradi.setEnabled(false);
 
 		textArea = new TextArea();
@@ -91,6 +94,8 @@ public class Guii extends JFrame {
 					textArea.setText("Podaci spremni"); //ispis da su podaci spremni
 					btnUcitaj.setEnabled(false); // kad su podaci spremljeni ne moze se nista pozivati dok se novi odaberu
 					btnObradi.setEnabled(true);
+					
+					
 				 } catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -117,6 +122,7 @@ public class Guii extends JFrame {
 				        		}else {
 				        			textArea.append("\nFormat treninga nije valjan\n"); // oznaka da valja
 				        			treningvalja = 0; // format nije zadovoljen
+				        			btnObradi.setEnabled(false);
 				        		}
 							
 						} catch (Exception e1) {
@@ -167,6 +173,7 @@ public class Guii extends JFrame {
 				        		}else {
 				        			textArea.append("\nFormat testa nije valjan\n");
 				        			testvalja = 0; //format testa ne valja
+				        			btnObradi.setEnabled(false);
 				        		}
 							
 						} catch (Exception e1) {
@@ -233,6 +240,17 @@ public class Guii extends JFrame {
 		});
 		btnOcistiProzor.setBounds(315, 39, 89, 23);
 		contentPane.add(btnOcistiProzor);
+		
+		
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 dispose();
+			        Guii game = new Guii();
+			        game.setVisible(true);
+			}
+		});
+		btnReset.setBounds(138, 195, 89, 23);
+		contentPane.add(btnReset);
 		btnCsvarff.addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
 				  fc = new JFileChooser();
@@ -294,4 +312,5 @@ public class Guii extends JFrame {
 	public static void Pisi(String tekst) {
 		textArea.appendText(tekst); // sluzi za pisanje po textboxu iz drugih klasa
 	}
+	
 }
