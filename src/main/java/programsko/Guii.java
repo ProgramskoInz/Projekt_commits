@@ -47,6 +47,7 @@ public class Guii extends JFrame {
 	private static TextArea textArea;
 	private UcitajPodatke ucitavanje;
 	public static Double[] poljetocnosti = new Double[10];
+	public static Double[] xos = new Double[10];
 	public static Double[] geomtocnosto = new Double[10];
 	public static int brojactoc = 0, brojactresh = 8;
 	private JButton btnObradi = new JButton("Obradi");
@@ -290,13 +291,14 @@ public class Guii extends JFrame {
 		DefaultCategoryDataset dataset1 = new DefaultCategoryDataset();
 		for(int it = 0; it < brojactresh; it++) {
 			dataset.setValue(new Double(poljetocnosti[it]), "Values", String.valueOf(it));
-			dataset1.setValue(new Double(geomtocnosto[it]), "Values", String.valueOf(it));
+			dataset1.setValue(new Double(geomtocnosto[it]), "Values", String.valueOf(xos[it]));
+		//	System.out.print(xos[it]);
 		}
 		
 		
 		
 		JFreeChart chart = ChartFactory.createLineChart("Toènost", "Broj treshold granice", "Postotak toènosti", dataset,PlotOrientation.VERTICAL, false, true, false);
-		JFreeChart chart1 = ChartFactory.createLineChart("Geometrijska tocnost", "", "Postotak toènosti", dataset1,PlotOrientation.VERTICAL, false, true, false);
+		JFreeChart chart1 = ChartFactory.createLineChart("Geometrijska tocnost", "Omjer jedinica", "Postotak toènosti", dataset1,PlotOrientation.VERTICAL, false, true, false);
 		CategoryPlot p = chart.getCategoryPlot();
 		p.setRangeGridlinePaint(Color.BLUE);
 		ChartFrame frame = new ChartFrame("Graf tocnosti",chart);

@@ -10,7 +10,7 @@ import weka.filters.supervised.attribute.NominalToBinary;
 
 public class ThresholdRad {
 	private static Instances trainDataset,testDataset,noviDataset;
-	private static int i,j;
+	private static int i,j,jedinice;
 	private static double vrijednost;
 	private static FastVector lista = new FastVector();
 	private static Izvjestaj prozor =new Izvjestaj();
@@ -36,20 +36,24 @@ public class ThresholdRad {
 			
 		}
 		for(j = 0; j < Guii.brojactresh; j++) {
+			jedinice = 0;
 			noviDataset = podaci.train;
 			noviDataset.setClassIndex(noviDataset.numAttributes()-1);
 			for(i = 0; i < trainDataset.numInstances(); i++){
+				
 				vrijednost = trainDataset.instance(i).value(trainDataset.numAttributes()-2);
 				double klas = testDataset.instance(i).classValue();
 				if(vrijednost > j) {
 					noviDataset.instance(i).setValue(noviDataset.classAttribute(), 1); // 1 ako je greska veca od tresholda
+					jedinice++;
 				}else {
 					noviDataset.instance(i).setValue(noviDataset.classAttribute(), 0);
 				}
-				Izvjestaj.Pisi(noviDataset.instance(i).classValue()+" Broj gresaka : "+vrijednost +" |clas vrijednost: "+klas +"\n");
-				
-				
+				Izvjestaj.Pisi(noviDataset.instance(i).classValue()+" Broj gresaka : "+vrijednost +" |clas vrijednost: "+klas +"\n");	
+	            	
 			}
+			Guii.xos[Guii.brojactoc] = ( (double)jedinice/ (double)noviDataset.numInstances());
+		//	System.out.println("hehe"+(jedinice/noviDataset.numInstances()) +" " +jedinice+" "+noviDataset.numInstances());
 			Regresija.regresija(noviDataset,testDataset);
 			Izvjestaj.Pisi("Gotov " + j +" krug");
 		}
