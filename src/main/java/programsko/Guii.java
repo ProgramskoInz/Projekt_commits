@@ -203,7 +203,7 @@ public class Guii extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					
-						 Graph();
+						 Graph(poljetocnosti,geomtocnosto,brojactresh,xos);
 					
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -286,7 +286,7 @@ public class Guii extends JFrame {
 		
 		
 	}
-	public static void Graph() {
+	public static void Graph(Double poljetocnosti[], Double geomtocnosto[],int brojactresh,Double xos[]) {
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 		DefaultCategoryDataset dataset1 = new DefaultCategoryDataset();
 		for(int it = 0; it < brojactresh; it++) {

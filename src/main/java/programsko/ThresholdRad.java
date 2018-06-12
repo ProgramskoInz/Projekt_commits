@@ -24,6 +24,7 @@ public class ThresholdRad {
 		
 		testDataset = podaci.test;
 		testDataset.insertAttributeAt(atribut, testDataset.numAttributes()); // dodajemo attribut sa 0 i 1
+		atribut = null;
 		testDataset.setClassIndex(testDataset.numAttributes()-1); // dodajemo clas indeks na zadnji
 		for(j = 0; j< testDataset.numInstances();j++) {
 			vrijednost = testDataset.instance(j).value(testDataset.numAttributes()-2); // gledamo greske 

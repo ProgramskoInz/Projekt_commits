@@ -19,10 +19,15 @@ public class UcitajPodatke {
 	Instances test;
 	private static CSVLoader loader;
 	private static ArffSaver saver;
-	public UcitajPodatke(String sourcetrening, String sourcetest) throws Exception {
+	public UcitajPodatke(String sourcetrening, String sourcetest) {
 		this.srctrening = sourcetrening;
 		this.srctest = sourcetest;
-		ucitaj();
+		try {
+			ucitaj();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	private void ucitaj() throws Exception {
 		breader = new BufferedReader(new FileReader(this.srctrening)); // ucitava trening podatke
@@ -39,7 +44,6 @@ public class UcitajPodatke {
 		loader = new CSVLoader(); //ucita csv
 		loader.setSource(new File(csvpath)); // uzima path od fajla 
 		Instances data = loader.getDataSet(); //uzme podatke
-		
 	
 		saver = new ArffSaver(); // saver kao arff
 		saver.setInstances(data); //postavi podatke
