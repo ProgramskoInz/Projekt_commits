@@ -71,6 +71,6 @@ public class Izvjestaj extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 	}
 	public static void Pisi(String tekst) {
-		textArea.append(tekst);
+		textArea.append(tekst); // pisanje po izvjestaju
 	}
 }

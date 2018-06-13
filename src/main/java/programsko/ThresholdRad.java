@@ -19,12 +19,12 @@ public class ThresholdRad {
 		prozor.setVisible(true);
 		lista.addElement("0");
 		lista.addElement("1");
-		weka.core.Attribute atribut = new  weka.core.Attribute("Classindeks",lista);
+		weka.core.Attribute atribut = new  weka.core.Attribute("Classindeks",lista); // izrada novoh atributa za dodavanje na kraj
 		trainDataset.insertAttributeAt(atribut, trainDataset.numAttributes());
 		
 		testDataset = podaci.test;
 		testDataset.insertAttributeAt(atribut, testDataset.numAttributes()); // dodajemo attribut sa 0 i 1
-		atribut = null;
+		atribut = null; // pokusaj rjesavanja problema kod reseta
 		testDataset.setClassIndex(testDataset.numAttributes()-1); // dodajemo clas indeks na zadnji
 		for(j = 0; j< testDataset.numInstances();j++) {
 			vrijednost = testDataset.instance(j).value(testDataset.numAttributes()-2); // gledamo greske 
@@ -55,8 +55,8 @@ public class ThresholdRad {
 			}
 			Guii.xos[Guii.brojactoc] = ( (double)jedinice/ (double)noviDataset.numInstances());
 		//	System.out.println("hehe"+(jedinice/noviDataset.numInstances()) +" " +jedinice+" "+noviDataset.numInstances());
-			Regresija.regresija(noviDataset,testDataset);
-			Izvjestaj.Pisi("Gotov " + j +" krug");
+			Regresija.regresija(noviDataset,testDataset); //regresija sa novim train datasetom i istim testom 
+			Izvjestaj.Pisi("Gotov " + j +" krug"); //ispis izvjestaja  da je gotov j krug
 		}
 	}
 		

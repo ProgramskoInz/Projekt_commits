@@ -245,9 +245,15 @@ public class Guii extends JFrame {
 		
 		btnReset.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 dispose();
+					/*dispose();
 			        Guii game = new Guii();
-			        game.setVisible(true);
+			        game.setVisible(true);*/
+				try {
+					restartApplication();
+				} catch (URISyntaxException | IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnReset.setBounds(138, 195, 89, 23);
@@ -290,12 +296,12 @@ public class Guii extends JFrame {
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 		DefaultCategoryDataset dataset1 = new DefaultCategoryDataset();
 		for(int it = 0; it < brojactresh; it++) {
-			dataset.setValue(new Double(poljetocnosti[it]), "Values", String.valueOf(it));
+			dataset.setValue(new Double(poljetocnosti[it]), "Values", String.valueOf(it)); //spremanje rijednosti na y i x os
 			dataset1.setValue(new Double(geomtocnosto[it]), "Values", String.valueOf(xos[it]));
 		//	System.out.print(xos[it]);
 		}
 		
-		
+		//izrada i prikaz grafa
 		
 		JFreeChart chart = ChartFactory.createLineChart("Toènost", "Broj treshold granice", "Postotak toènosti", dataset,PlotOrientation.VERTICAL, false, true, false);
 		JFreeChart chart1 = ChartFactory.createLineChart("Geometrijska tocnost", "Omjer jedinica", "Postotak toènosti", dataset1,PlotOrientation.VERTICAL, false, true, false);
@@ -313,6 +319,25 @@ public class Guii extends JFrame {
 	}
 	public static void Pisi(String tekst) {
 		textArea.appendText(tekst); // sluzi za pisanje po textboxu iz drugih klasa
+	}
+	public void restartApplication() throws URISyntaxException, IOException
+	{
+	  final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+	  final File currentJar = new File(Guii.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+
+	  /* is it a jar file? */
+	  if(!currentJar.getName().endsWith(".jar"))
+	    return;
+
+	  /* Build command: java -jar application.jar */
+	  final ArrayList<String> command = new ArrayList<String>();
+	  command.add(javaBin);
+	  command.add("-jar");
+	  command.add(currentJar.getPath());
+
+	  final ProcessBuilder builder = new ProcessBuilder(command);
+	  builder.start();
+	  System.exit(0);
 	}
 	
 }

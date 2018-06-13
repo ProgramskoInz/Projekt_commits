@@ -16,6 +16,16 @@ public class Test {
 		}
 		Assert.assertEquals(0, greska);
 	}
+
+	@SuppressWarnings("deprecation")
+	@org.junit.Test
+	public void testUcitanjaPodatakaKriviFormat() {
+		UcitajPodatke uc = new UcitajPodatke("C:/Users/Boris/Desktop/JDT/novi1.csv","C:/Users/Boris/Desktop/JDT/novi.arff");
+		if(uc != null) {
+			greska = 0;
+		}
+		Assert.assertEquals(1, greska);
+	}
 	@SuppressWarnings("deprecation")
 	@org.junit.Test
 	public void testTresholdRada() {
@@ -65,6 +75,23 @@ public class Test {
 		Assert.assertEquals(0, greska);
 		
 	}
+	
+	@SuppressWarnings("deprecation")
+	@org.junit.Test
+	public void testPretvorbeKriviFormat() {
+		
+		try {
+			UcitajPodatke.pretvorba("C:/Users/Boris/Desktop/JDT/novi.arff","C:/Users/Boris/Desktop/JDT","test");
+			greska = 0;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		
+		Assert.assertEquals(0, greska);
+		
+	}
+	
 	
 	
 	

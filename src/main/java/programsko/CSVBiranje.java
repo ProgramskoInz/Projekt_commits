@@ -68,7 +68,7 @@ public class CSVBiranje extends JFrame {
 				    	//	System.out.println("pretvordba");
 							
 				    		UcitajPodatke.pretvorba(putcsv,pathdir,textField.getText()); // salje ime fajla, ime direktorija, i ime novog fajla
-				    		setVisible(false);
+				    		setVisible(false); // gasenje prozora
 				    	} catch (Exception e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
