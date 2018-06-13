@@ -9,8 +9,11 @@ public class Test {
 	
 	@SuppressWarnings("deprecation")
 	@org.junit.Test
+
 	public void testUcitanjaPodataka() {
-		UcitajPodatke uc = new UcitajPodatke("C:/Users/Boris/Desktop/JDT/novi.arff","C:/Users/Boris/Desktop/JDT/novi.arff");
+		//System.out.println(this.getClass().getProtectionDomain().getCodeSource().getLocation()+""+"bOK");
+
+		UcitajPodatke uc = new UcitajPodatke(this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi.arff",this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi.arff");
 		if(uc != null) {
 			greska = 0;
 		}
@@ -20,7 +23,7 @@ public class Test {
 	@SuppressWarnings("deprecation")
 	@org.junit.Test
 	public void testUcitanjaPodatakaKriviFormat() {
-		UcitajPodatke uc = new UcitajPodatke("C:/Users/Boris/Desktop/JDT/novi1.csv","C:/Users/Boris/Desktop/JDT/novi.arff");
+		UcitajPodatke uc = new UcitajPodatke(this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi1.csv",this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi.arff");
 		if(uc != null) {
 			greska = 0;
 		}
@@ -29,7 +32,7 @@ public class Test {
 	@SuppressWarnings("deprecation")
 	@org.junit.Test
 	public void testTresholdRada() {
-		UcitajPodatke ucitavanje = new UcitajPodatke("C:/Users/Boris/Desktop/JDT/novi.arff","C:/Users/Boris/Desktop/JDT/novi.arff");
+		UcitajPodatke ucitavanje = new UcitajPodatke(this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi.arff",this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi.arff");
 		try {
 			ThresholdRad.manipuliraj(ucitavanje);
 			greska = 0;
@@ -65,7 +68,7 @@ public class Test {
 	public void testPretvorbe() {
 		
 		try {
-			UcitajPodatke.pretvorba("C:/Users/Boris/Desktop/JDT/novi1.csv","C:/Users/Boris/Desktop/JDT","test");
+			UcitajPodatke.pretvorba(this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi1.csv",this.getClass().getProtectionDomain().getCodeSource().getLocation()+"","test");
 			greska = 0;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -81,7 +84,7 @@ public class Test {
 	public void testPretvorbeKriviFormat() {
 		
 		try {
-			UcitajPodatke.pretvorba("C:/Users/Boris/Desktop/JDT/novi.arff","C:/Users/Boris/Desktop/JDT","test");
+			UcitajPodatke.pretvorba(this.getClass().getProtectionDomain().getCodeSource().getLocation()+"novi.arff",this.getClass().getProtectionDomain().getCodeSource().getLocation()+"","test");
 			greska = 0;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
