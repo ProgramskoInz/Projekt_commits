@@ -1,0 +1,79 @@
+@relation novi1
+
+@attribute File {org.eclipse.jdt.core/antadapter/org/eclipse/jdt/core/JDTCompilerAdapter.java,org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/ClasspathDirectory.java,org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/ClasspathJar.java,org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/CompilationUnit.java,org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/FileFinder.java,org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/FileSystem.java,org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/Main.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionNodeFound.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnArgumentName.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnClassLiteralAccess.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnClassReference.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnExceptionReference.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnExplicitConstructorCall.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnFieldName.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnFieldType.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnImportReference.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnInterfaceReference.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnLocalName.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMemberAccess.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMessageSend.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMethodName.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMethodReturnType.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnPackageReference.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnQualifiedAllocationExpression.java,org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnQualifiedClassReference.java}
+@attribute LOC numeric
+@attribute SLOC_P numeric
+@attribute SLOC_L numeric
+@attribute MVG numeric
+@attribute BLOC numeric
+@attribute C_SLOC numeric
+@attribute CLOC numeric
+@attribute CWORD numeric
+@attribute HCLOC numeric
+@attribute HCWORD numeric
+@attribute No_Methods numeric
+@attribute LCOM numeric
+@attribute AVCC numeric
+@attribute NOS numeric
+@attribute HBUG numeric
+@attribute HEFF numeric
+@attribute UWCS numeric
+@attribute INST numeric
+@attribute PACK numeric
+@attribute RFC numeric
+@attribute CBO numeric
+@attribute MI numeric
+@attribute CCML numeric
+@attribute NLOC numeric
+@attribute F_IN numeric
+@attribute DIT numeric
+@attribute MINC numeric
+@attribute S_R numeric
+@attribute R_R numeric
+@attribute COH numeric
+@attribute LMC numeric
+@attribute LCOM2 numeric
+@attribute MAXCC numeric
+@attribute HVOL numeric
+@attribute HIER numeric
+@attribute NQU numeric
+@attribute FOUT numeric
+@attribute SIX numeric
+@attribute EXT numeric
+@attribute NSUP numeric
+@attribute TCC numeric
+@attribute NSUB numeric
+@attribute MPC numeric
+@attribute NCO numeric
+@attribute INTR numeric
+@attribute CCOM numeric
+@attribute HLTH numeric
+@attribute MOD numeric
+@attribute bug_cnt numeric
+
+@data
+org.eclipse.jdt.core/antadapter/org/eclipse/jdt/core/JDTCompilerAdapter.java,231,108,89,17,26,24,97,419,10,57,3,1,6.67,77,1.18,63261.4,4,1,10,3,0,78.6,111,97,0,1,84.37,0,0.5,0.33,2,4,12,3537.91,2,1,0,0,0,1,20,0,0,2,0,46,594,1,3
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/ClasspathDirectory.java,117,93,71,29,12,11,12,126,10,59,8,0.16,3.5,65,1.05,62538.4,15,7,4,8,0,156.37,13,87,0,1,106.37,0,0,0.29,1,10,10,3163.98,0,3,0,0,0,0,28,0,0,5,1,13,599,1,0
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/ClasspathJar.java,78,57,46,10,9,4,12,86,10,59,6,0.2,2.5,39,0.45,15084.6,9,3,8,6,0,164.99,6,48,0,1,114.99,0,0,0.5,0,10,5,1352.22,0,2,0,0,0,0,15,0,0,4,1,6,282,1,0
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/CompilationUnit.java,74,53,38,13,9,5,12,76,10,59,6,0.2,2.17,33,0.43,19433.6,10,4,4,6,0,167.11,10,48,0,1,117.11,0,0,0.42,0,10,6,1296.89,0,1,0,0,0,0,13,0,0,5,1,10,270,1,2
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/FileFinder.java,49,36,26,8,3,1,10,60,10,59,2,0.67,5,27,0.41,19954.8,5,3,1,2,0,97.59,1,34,0,1,97.59,0,0,0.67,1,0,8,1239.15,0,0,0,0,0,0,10,0,0,2,0,1,236,1,0
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/FileSystem.java,169,143,93,42,8,8,18,149,10,59,9,0.25,5,100,1.71,181212,11,2,6,9,0,147.89,12,132,0,1,97.89,0,0,0.28,2,18,16,5139.33,0,4,0,0,0,0,45,0,0,5,1,9,940,1,1
+org.eclipse.jdt.core/batch/org/eclipse/jdt/internal/compiler/batch/Main.java,1288,1127,745,185,67,143,94,638,10,59,22,0.06,9.05,672,12.46,2658510,50,28,30,23,2,25.37,216,1032,2,1,75.37,0,0,0.09,9,162,120,37392.2,0,10,0,0,1,0,199,0,1,12,1,179,5300,1,6
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionNodeFound.java,33,20,16,0,3,1,10,67,10,59,3,0,1,12,0.09,1052.03,6,3,3,3,0,128.5,1,16,0,1,128.5,0,0.5,0.33,0,3,1,260.82,0,0,0,0,0,1,3,0,0,3,0,1,73,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnArgumentName.java,51,32,27,3,9,5,10,64,10,59,4,0.17,1.5,20,0.24,5501.31,6,2,6,5,0,170.12,5,25,0,1,120.12,0,0.5,0.38,0,8,3,714.3,3,1,0,0,1,1,6,0,1,3,0,5,162,1,1
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnClassLiteralAccess.java,60,25,19,2,5,3,30,142,10,59,3,0.25,1.33,15,0.17,3156.2,5,2,2,3,0,171.06,3,22,0,1,121.06,0,0.5,0.33,0,4,2,498.24,1,1,0,0,0,1,4,0,0,2,0,3,121,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnClassReference.java,21,9,6,1,2,1,10,61,10,59,2,0,1,5,0.04,451.36,2,0,0,2,0,141.24,1,8,0,1,141.24,0,0.5,0,0,2,1,128.67,0,1,0,0,0,1,2,0,0,1,0,1,37,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnExceptionReference.java,47,9,6,1,2,1,36,162,10,59,2,0,1,5,0.04,451.36,2,0,0,2,0,111.86,27,8,0,1,141.24,0,0.5,0,0,2,1,128.67,0,1,0,0,0,1,2,0,0,1,0,2,37,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnExplicitConstructorCall.java,77,41,29,9,5,6,31,149,10,59,3,0,3.67,27,0.3,14476.7,3,0,2,3,0,145.98,6,38,0,1,106.1,0,0.5,0,0,3,6,909.76,1,1,0,0,0,1,11,0,0,2,0,6,185,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnFieldName.java,43,26,22,3,7,6,10,65,10,59,3,0,1.67,17,0.2,4985.05,5,2,4,4,0,159.33,6,21,0,1,119.45,0,0.5,0.5,0,5,3,603.8,2,1,0,0,1,1,5,0,1,2,0,6,136,1,1
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnFieldType.java,59,23,17,3,6,1,30,168,10,59,3,1,1.33,13,0.13,2390.59,4,1,2,3,0,125.63,1,20,0,1,125.63,0,0.5,0.33,0,3,2,381.93,0,1,0,0,0,1,4,0,0,2,0,1,97,1,1
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnImportReference.java,56,19,14,3,6,3,31,146,10,59,2,0,2,15,0.16,5838.58,2,0,1,2,0,162.03,3,17,0,1,112.03,0,0.5,0,0,2,3,466.45,1,1,0,0,0,1,4,0,0,1,0,3,101,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnInterfaceReference.java,21,9,6,1,2,1,10,61,10,59,2,0,1,5,0.04,451.36,2,0,0,2,0,141.24,1,8,0,1,141.24,0,0.5,0,0,2,1,128.67,0,1,0,0,0,1,2,0,0,1,0,1,37,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnLocalName.java,43,26,22,3,7,5,10,64,10,59,3,0,1.67,17,0.2,4985.05,5,2,4,4,0,169.45,5,21,0,1,119.45,0,0.5,0.5,0,5,3,603.8,2,1,0,0,1,1,5,0,1,2,0,5,136,1,1
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMemberAccess.java,58,19,12,2,7,2,32,157,10,59,3,0,1.33,8,0.1,2344.79,3,0,2,3,0,186.92,3,16,0,1,136.92,0,0.5,0,0,3,2,296.09,1,1,0,0,0,1,4,0,0,2,0,3,75,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMessageSend.java,70,31,22,8,8,5,31,149,10,59,2,0,4.5,21,0.27,12611.8,2,0,2,2,0,143.32,5,28,0,1,103.43,0,0.5,0,0,2,5,812.62,0,1,0,0,0,1,9,0,0,1,0,5,167,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMethodName.java,61,41,34,8,10,7,10,66,10,59,3,1,3.33,32,0.33,22098.1,4,1,3,3,0,142.85,7,37,0,1,102.97,0,0.5,0,0,3,8,998.22,2,1,0,0,0,1,10,0,0,2,0,7,201,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnMethodReturnType.java,34,19,15,1,5,0,10,59,10,59,3,0,1,10,0.08,1207.1,3,0,4,3,0,132.69,0,14,0,1,132.69,0,0.5,0,0,3,1,246.97,0,1,0,0,0,1,3,0,0,2,0,0,68,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnPackageReference.java,54,19,14,3,4,3,31,146,10,59,2,0,2,15,0.16,5838.58,2,0,1,2,0,162.03,3,17,0,1,112.03,0,0.5,0,0,2,3,466.45,1,1,0,0,0,1,4,0,0,1,0,3,101,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnQualifiedAllocationExpression.java,70,32,20,6,5,6,33,191,10,59,2,0,4,17,0.24,10976.6,2,0,2,2,0,128.16,6,29,0,1,107.55,0,0.5,0,0,2,6,728.04,1,1,0,0,0,1,8,0,0,1,0,6,153,1,0
+org.eclipse.jdt.core/codeassist/org/eclipse/jdt/internal/codeassist/complete/CompletionOnQualifiedClassReference.java,29,16,12,2,3,3,10,62,10,59,2,0,1.5,14,0.13,4001.14,2,0,0,2,0,163.39,3,15,0,1,113.39,0,0.5,0,0,2,2,404.49,0,1,0,0,0,1,3,0,0,1,0,3,92,1,0
